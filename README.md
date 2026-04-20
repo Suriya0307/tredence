@@ -1,11 +1,9 @@
-````md
-# HR Workflow  
+## HR Workflow  
 ### Intelligent HR Automation Orchestrator  
 
 > A high-performance workflow automation platform built for HR Managers, People Operations teams, and Enterprise Admins to visually design, simulate, and manage employee lifecycle workflows, approvals, compliance processes, and operational automations.
 
 ---
-
 ## Overview
 
 HR Workflow is a modern frontend-first orchestration platform that enables organizations to digitize and automate internal HR operations through a visual workflow engine.
