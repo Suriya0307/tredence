@@ -421,10 +421,87 @@ Secure HR content vault.
 
 
 
+## Workflows
 
 
 
-<img width="1920" height="1140" alt="Screenshot 2026-04-21 001059" src="https://github.com/user-attachments/assets/77bc499d-40a2-4704-890b-3958419f0f1e" />
+
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/c300321f-0f70-40d0-90cb-1c3697df3371" />
+
+
+
+
+
+
+
+
+
+
+
+
+## Dashboard
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/b5d1fc90-27b0-4312-a47f-9c9f64525bfe" />
+
+
+
+
+
+
+
+
+
+
+
+
+## Scheduler
+
+
+
+
+
+
+
+
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/a76bcd2d-2eb8-49b0-a5cf-ccccf87bcaf4" />
+
+
+
+
+
+
+
+
+
+
+## Intergrations
+
+
+
+
+
+
+
+
+
+
+
+<img width="1920" height="1140" alt="image" src="https://github.com/user-attachments/assets/3669d1bf-7e15-4e18-b81a-3f4080b9652a" />
+
+
+
+
+
 
 
 
