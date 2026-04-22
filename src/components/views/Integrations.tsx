@@ -39,24 +39,24 @@ const INTEGRATIONS: Integration[] = [
 const AccordionForm = ({ isOpen }: { isOpen: boolean }) => {
   if (!isOpen) return null;
   return (
-    <div className="mt-4 pt-4 border-t border-[#E8E4FF] space-y-4 animate-in slide-in-from-top-2 duration-300">
+    <div className="mt-4 pt-4 border-t border-[#FEF08A] space-y-4 animate-in slide-in-from-top-2 duration-300">
       <div className="space-y-1.5">
-        <label className="text-[10px] font-bold text-[#9CA3AF] uppercase tracking-widest ml-1">Client ID</label>
+        <label className="text-[10px] font-bold text-[#92400E] uppercase tracking-widest ml-1">Client ID</label>
         <input 
           type="text" 
           placeholder="Enter ID..."
-          className="w-full px-3 py-2 bg-[#FAFAFE] border border-[#D1D5DB] rounded-lg text-xs placeholder-[#9CA3AF] focus:ring-2 focus:ring-[#6366F1] focus:border-transparent outline-none transition-all"
+          className="w-full px-3 py-2 bg-[#FFFDF0] border border-[#FEF08A] rounded-lg text-xs placeholder-[#9CA3AF] focus:ring-2 focus:ring-[#FDE68A] focus:border-transparent outline-none transition-all"
         />
       </div>
       <div className="space-y-1.5">
-        <label className="text-[10px] font-bold text-[#9CA3AF] uppercase tracking-widest ml-1">API Secret</label>
+        <label className="text-[10px] font-bold text-[#92400E] uppercase tracking-widest ml-1">API Secret</label>
         <input 
           type="password" 
           placeholder="••••••••••••"
-          className="w-full px-3 py-2 bg-[#FAFAFE] border border-[#D1D5DB] rounded-lg text-xs placeholder-[#9CA3AF] focus:ring-2 focus:ring-[#6366F1] focus:border-transparent outline-none transition-all"
+          className="w-full px-3 py-2 bg-[#FFFDF0] border border-[#FEF08A] rounded-lg text-xs placeholder-[#9CA3AF] focus:ring-2 focus:ring-[#FDE68A] focus:border-transparent outline-none transition-all"
         />
       </div>
-      <button className="w-full py-2 bg-[#4F46E5] text-white rounded-lg text-xs font-bold hover:bg-[#4338CA] transition-all">
+      <button className="w-full py-2 bg-[#B45309] text-white rounded-lg text-xs font-bold hover:bg-[#78350F] transition-all">
         Save Credentials
       </button>
     </div>
@@ -79,10 +79,10 @@ export const Integrations = () => {
   return (
     <div className="flex-1 flex overflow-hidden bg-transparent">
       {/* Category Sidebar */}
-      <div className="w-[240px] bg-white border-r border-[#E0E7FF] flex flex-col shrink-0 p-6">
+      <div className="w-[240px] bg-[#FFFFF5] border-r border-[#FEF08A] flex flex-col shrink-0 p-6">
         <div className="mb-8">
           <h2 className="text-[14px] font-semibold text-[#1F2937] mb-1">Marketplace</h2>
-          <p className="text-[11px] text-[#9CA3AF]">Explore third-party modules</p>
+          <p className="text-[11px] text-[#92400E] opacity-70">Explore third-party modules</p>
         </div>
 
         <div className="space-y-1">
@@ -93,8 +93,8 @@ export const Integrations = () => {
               className={clsx(
                 "w-full text-left px-4 py-2.5 rounded-lg text-[13px] font-medium transition-all",
                 activeCategory === cat 
-                  ? "bg-[#EEF2FF] text-[#4F46E5] border border-[#C7D2FE]" 
-                  : "text-[#6B7280] hover:text-[#374151] hover:bg-[#F9FAFB]"
+                  ? "bg-[#FEFCE8] text-[#92400E] border border-[#FEF08A]" 
+                  : "text-[#1C1917]/60 hover:text-[#1C1917] hover:bg-[#FDE68A]/20"
               )}
             >
               {cat}
@@ -102,25 +102,25 @@ export const Integrations = () => {
           ))}
         </div>
 
-        <div className="mt-auto p-4 bg-[#F5F3FF] rounded-xl border border-[#E0E7FF]">
-           <div className="flex items-center gap-2 mb-2 text-[#6366F1]">
+        <div className="mt-auto p-4 bg-[#FEFCE8] rounded-xl border border-[#FEF08A]">
+           <div className="flex items-center gap-2 mb-2 text-[#92400E]">
               <ShieldCheck size={16} />
               <span className="text-[11px] font-bold uppercase tracking-wider">Secured</span>
            </div>
-           <p className="text-[11px] text-[#6B7280] leading-relaxed">All integrations use AES-256 encryption for credential storage.</p>
+           <p className="text-[11px] text-[#92400E]/70 leading-relaxed">All integrations use AES-256 encryption for credential storage.</p>
         </div>
       </div>
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col p-8 space-y-8 overflow-y-auto w-full no-scrollbar">
         {/* Featured Banner */}
-        <div className="w-full h-[200px] bg-[#6366F1] rounded-2xl p-10 flex flex-col justify-center relative overflow-hidden shrink-0 group">
+        <div className="w-full h-[200px] bg-[#B45309] rounded-2xl p-10 flex flex-col justify-center relative overflow-hidden shrink-0 group">
            <div className="relative z-10 space-y-2">
               <span className="text-[10px] font-black text-white/60 uppercase tracking-[0.2em]">Featured Integration</span>
               <h2 className="text-3xl font-black text-white tracking-tight">Sync Slack Workflows</h2>
               <p className="text-white/80 text-sm max-w-[400px]">Automate your recruitment updates directly to the engineering team channels.</p>
               <div className="pt-4">
-                <button className="px-6 py-2 bg-white text-[#6366F1] rounded-lg text-xs font-bold hover:bg-[#EEF2FF] transition-all">Get Started</button>
+                <button className="px-6 py-2 bg-white text-[#B45309] rounded-lg text-xs font-bold hover:bg-[#FEFCE8] transition-all">Get Started</button>
               </div>
            </div>
            <div className="absolute right-12 top-1/2 -translate-y-1/2 opacity-10 group-hover:opacity-20 transition-all duration-700">
@@ -135,12 +135,12 @@ export const Integrations = () => {
               <input 
                 type="text" 
                 placeholder="Search integrations..."
-                className="w-full pl-10 pr-4 py-2.5 bg-white border border-[#D1D5DB] rounded-lg text-[13px] focus:ring-2 focus:ring-[#6366F1] focus:border-transparent outline-none shadow-sm transition-all"
+                className="w-full pl-10 pr-4 py-2.5 bg-[#FFFDE7] border border-[#FEF08A] rounded-lg text-[13px] focus:ring-2 focus:ring-[#FDE68A] focus:border-transparent outline-none shadow-sm transition-all"
                 value={searchTerm}
                 onChange={e => setSearchTerm(e.target.value)}
               />
            </div>
-           <button className="flex items-center gap-2 px-4 py-2.5 bg-white border border-[#D1D5DB] rounded-lg text-[13px] font-medium text-[#374151] hover:bg-[#F9FAFB] shadow-sm transition-all">
+           <button className="flex items-center gap-2 px-4 py-2.5 bg-white border border-[#FEF08A] rounded-lg text-[13px] font-medium text-[#1C1917] hover:bg-[#FFFDF0] shadow-sm transition-all">
               <ExternalLink size={16} /> Requests
            </button>
         </div>
@@ -148,7 +148,7 @@ export const Integrations = () => {
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 pb-20">
           {filtered.map(app => (
-            <div key={app.id} className="bg-white border border-[#E0E7FF] rounded-2xl shadow-[0_1px_4px_rgba(99,102,241,0.07)] p-6 flex flex-col hover:shadow-lg transition-all group">
+            <div key={app.id} className="bg-white border border-[#FDE68A] rounded-2xl shadow-[0_1px_4px_rgba(253,230,138,0.1)] p-6 flex flex-col hover:shadow-lg transition-all group border-l-[4px]">
                <div className="flex items-start justify-between mb-4">
                   <div className={clsx("p-3 rounded-xl text-white shadow-lg", app.accent)}>
                     {app.icon}
@@ -168,20 +168,20 @@ export const Integrations = () => {
                </div>
                
                <h3 className="text-[15px] font-bold text-[#1F2937]">{app.name}</h3>
-               <p className="text-[12px] text-[#6B7280] mt-1 mb-6 leading-relaxed flex-1">{app.description}</p>
+               <p className="text-[12px] text-[#1C1917]/60 mt-1 mb-6 leading-relaxed flex-1">{app.description}</p>
                
                <div className="flex items-center gap-2">
                   {app.status === 'Disconnected' ? (
                     <button 
                       onClick={() => setExpandedId(expandedId === app.id ? null : app.id)}
-                      className="flex-1 py-2.5 bg-[#4F46E5] text-white rounded-lg text-xs font-bold hover:bg-[#4338CA] transition-all flex items-center justify-center gap-2"
+                      className="flex-1 py-2.5 bg-[#B45309] text-white rounded-lg text-xs font-bold hover:bg-[#78350F] transition-all flex items-center justify-center gap-2"
                     >
                       {expandedId === app.id ? <ChevronUp size={14} /> : <Plus size={14} />} 
                       {expandedId === app.id ? 'Close' : 'Connect'}
                     </button>
                   ) : (
                     <div className="flex items-center gap-2 w-full">
-                       <button className="flex-1 py-2.5 bg-white border border-[#C7D2FE] text-[#4F46E5] rounded-lg text-xs font-bold hover:bg-[#EEF2FF] transition-all flex items-center justify-center gap-2">
+                       <button className="flex-1 py-2.5 bg-white border border-[#FEF08A] text-[#92400E] rounded-lg text-xs font-bold hover:bg-[#FEFCE8] transition-all flex items-center justify-center gap-2">
                           <SettingsIcon size={14} /> Settings
                        </button>
                        <button className="p-2.5 bg-[#F9FAFB] border border-[#E5E7EB] rounded-lg text-[6B7280] hover:text-[#F43F5E] transition-all">

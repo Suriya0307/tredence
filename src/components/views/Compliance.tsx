@@ -87,7 +87,7 @@ const ScoreRing = ({ score }: { score: number }) => {
         />
         <circle 
           cx="72" cy="72" r={radius} 
-          className="fill-none stroke-[#6366F1] transition-all duration-1000 ease-out" 
+          className="fill-none stroke-[#B45309] transition-all duration-1000 ease-out" 
           strokeWidth="10" 
           strokeDasharray={circumference}
           strokeDashoffset={offset}
@@ -136,7 +136,7 @@ export const Compliance = () => {
   return (
     <div className="flex-1 flex flex-col lg:flex-row h-full overflow-hidden bg-transparent">
       {/* Left Panel: Stats */}
-      <div className="w-full lg:w-[320px] bg-white border-r border-[#E0E7FF] p-8 flex flex-col gap-10 shrink-0 overflow-y-auto">
+      <div className="w-full lg:w-[320px] bg-[#FFFFF5] border-r border-[#FEF08A] p-8 flex flex-col gap-10 shrink-0 overflow-y-auto">
         <div className="space-y-5">
           <div>
             <h2 className="text-[13px] font-medium text-[#374151] tracking-[0.01em]">Compliance Health</h2>
@@ -152,7 +152,7 @@ export const Compliance = () => {
           <div className="space-y-4">
             {[
               { l: 'Regulatory', v: 92, c: 'bg-[#10B981]' },
-              { l: 'Occupational', v: 85, c: 'bg-[#6366F1]' },
+              { l: 'Occupational', v: 85, c: '#B45309' },
               { l: 'Internal', v: 64, c: 'bg-[#F59E0B]' },
             ].map(item => (
               <div key={item.l} className="space-y-2">
@@ -160,7 +160,7 @@ export const Compliance = () => {
                   <span className="text-[#6B7280]">{item.l}</span>
                   <span className="text-[#374151]">{item.v}%</span>
                 </div>
-                <div className="h-2 w-full bg-[#EEF2FF] rounded-full overflow-hidden border border-[#E0E7FF]">
+                <div className="h-2 w-full bg-[#FEFCE8] rounded-full overflow-hidden border border-[#FEF08A]">
                   <div className="h-full transition-all duration-1000 ease-out" style={{ width: `${item.v}%`, backgroundColor: item.c }} />
                 </div>
               </div>
@@ -169,9 +169,9 @@ export const Compliance = () => {
         </div>
 
         <div className="mt-auto pt-6 border-t border-[#E0E7FF]">
-           <div className="p-4 bg-[#EEF2FF] border border-[#C7D2FE] rounded-[12px]">
+           <div className="p-4 bg-[#FEFCE8] border border-[#FEF08A] rounded-[12px]">
               <div className="flex items-center gap-2 mb-2">
-                <ShieldCheck size={16} className="text-[#6366F1]" />
+                <ShieldCheck size={16} className="text-[#B45309]" />
                 <h4 className="text-[13px] font-medium text-[#374151]">Audit Ready</h4>
               </div>
               <p className="text-[12px] text-[#6B7280] leading-relaxed">Reporting is up-to-date for Q3. Next scheduled audit in 14 days.</p>
@@ -191,13 +191,13 @@ export const Compliance = () => {
 
         <div className="flex-1 overflow-y-auto w-full p-8 space-y-8">
           {/* Toolbar inside content area to match Airy Blueprint */}
-          <div className="bg-white p-4 rounded-[12px] border border-[#E0E7FF] shadow-[0_1px_4px_rgba(99,102,241,0.07)] flex items-center justify-between gap-4">
+          <div className="bg-white p-4 rounded-[12px] border border-[#FDE68A] shadow-[0_1px_4px_rgba(253,230,138,0.1)] flex items-center justify-between gap-4 border-l-[4px]">
              <div className="relative flex-1 max-w-sm">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-[#9CA3AF]" size={16} />
                 <input 
                   type="text" 
                   placeholder="Search policies..."
-                  className="w-full pl-10 pr-4 py-2.5 bg-transparent border border-[#D1D5DB] rounded-[8px] text-[13px] text-[#1F2937] focus:ring-2 focus:ring-[#6366F1] focus:border-transparent outline-none transition-all placeholder-[#9CA3AF]"
+                  className="w-full pl-10 pr-4 py-2.5 bg-[#FFFDE7] border border-[#FEF08A] rounded-[8px] text-[13px] text-[#1F2937] focus:ring-2 focus:ring-[#FDE68A] focus:border-transparent outline-none transition-all placeholder-[#9CA3AF]"
                   value={searchTerm}
                   onChange={e => setSearchTerm(e.target.value)}
                 />
@@ -226,18 +226,18 @@ export const Compliance = () => {
                     className="flex items-center gap-2 text-[12px] font-medium text-[#6B7280] uppercase tracking-wider hover:text-[#374151] transition-colors"
                   >
                     <ChevronDown size={16} className={clsx("transition-transform text-[#9CA3AF]", !isExpanded && "-rotate-90")} />
-                    {cat} <span className="bg-[#E0E7FF] text-[#6366F1] px-1.5 py-0.5 rounded text-[10px] ml-1">{catItems.length}</span>
+                    {cat} <span className="bg-[#FEF08A] text-[#92400E] px-1.5 py-0.5 rounded text-[10px] ml-1">{catItems.length}</span>
                   </button>
                   
                   {isExpanded && (
-                    <div className="bg-white rounded-[12px] border border-[#E0E7FF] shadow-[0_1px_4px_rgba(99,102,241,0.07)] overflow-hidden">
+                    <div className="bg-white rounded-[12px] border border-[#FDE68A] shadow-[0_1px_4px_rgba(253,230,138,0.1)] overflow-hidden border-l-[4px]">
                       {catItems.map((item, idx) => (
                         <div 
                           key={item.id} 
                           className={clsx(
                             "p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 transition-colors cursor-pointer border-b border-[#E8E4FF] last:border-b-0",
-                            idx % 2 === 0 ? "bg-white" : "bg-[#FAFAFE]",
-                            "hover:bg-[#F0EEFF] group"
+                            idx % 2 === 0 ? "bg-white" : "bg-[#FFFDF0]",
+                            "hover:bg-[#FEF9C3] group"
                           )}
                           onClick={() => setSelectedItem(item)}
                         >
@@ -256,8 +256,8 @@ export const Compliance = () => {
                                </div>
                             </div>
                           </div>
-                          <button className="md:opacity-0 group-hover:opacity-100 px-4 py-2 bg-white border border-[#C7D2FE] text-[#4F46E5] rounded-[8px] text-[12px] font-medium transition-all hover:bg-[#EEF2FF]">
-                            Review Policy
+                          <button className="md:opacity-0 group-hover:opacity-100 px-4 py-2 bg-white border border-[#FEF08A] text-[#92400E] rounded-[8px] text-[12px] font-medium transition-all hover:bg-[#FEFCE8]">
+                             View Details
                           </button>
                         </div>
                       ))}
@@ -279,9 +279,9 @@ export const Compliance = () => {
               className="relative w-full max-w-[480px] h-full bg-white shadow-[-4px_0_24px_rgba(0,0,0,0.05)] flex flex-col animate-in slide-in-from-right duration-300 border-l border-[#E0E7FF]"
               onClick={e => e.stopPropagation()}
             >
-              <div className="p-8 border-b border-[#E0E7FF] flex items-start justify-between bg-[#FAFAFE]">
+              <div className="p-8 border-b border-[#FEF08A] flex items-start justify-between bg-[#FFFDF0]">
                 <div>
-                  <span className="text-[11px] font-medium text-[#6366F1] uppercase tracking-wider">{selectedItem.category}</span>
+                  <span className="text-[11px] font-medium text-[#B45309] uppercase tracking-wider">{selectedItem.category}</span>
                   <h3 className="text-[20px] font-semibold text-[#1F2937] mt-1 mb-3">{selectedItem.name}</h3>
                   <StatusBadge status={selectedItem.status} />
                 </div>
@@ -296,17 +296,17 @@ export const Compliance = () => {
               <div className="flex-1 overflow-y-auto p-8 space-y-8 bg-white text-[#374151]">
                 <section>
                    <h4 className="text-[12px] font-medium text-[#9CA3AF] uppercase tracking-wider mb-2">Policy Summary</h4>
-                   <p className="text-[14px] text-[#4B5563] leading-relaxed bg-[#F9FAFB] p-4 rounded-[8px] border border-[#E5E7EB]">
+                   <p className="text-[14px] text-[#4B5563] leading-relaxed bg-[#FFFDF0] p-4 rounded-[8px] border border-[#FEF08A]">
                      {selectedItem.details}
                    </p>
                 </section>
 
                 <div className="grid grid-cols-2 gap-4">
-                   <div className="bg-[#FAFAFE] p-4 border border-[#E0E7FF] rounded-[8px]">
+                   <div className="bg-[#FFFDF0] p-4 border border-[#FEF08A] rounded-[8px]">
                       <p className="text-[11px] font-medium text-[#9CA3AF] uppercase tracking-wider mb-1">Last Reviewed</p>
                       <p className="text-[14px] font-medium text-[#1F2937]">{selectedItem.lastReviewed}</p>
                    </div>
-                   <div className="bg-[#FAFAFE] p-4 border border-[#E0E7FF] rounded-[8px]">
+                   <div className="bg-[#FFFDF0] p-4 border border-[#FEF08A] rounded-[8px]">
                       <p className="text-[11px] font-medium text-[#9CA3AF] uppercase tracking-wider mb-1">Owner</p>
                       <p className="text-[14px] font-medium text-[#1F2937]">{selectedItem.owner}</p>
                    </div>
@@ -332,12 +332,12 @@ export const Compliance = () => {
                 </section>
               </div>
 
-              <div className="p-6 border-t border-[#E0E7FF] bg-[#FAFAFE] flex flex-col gap-3">
-                <button className="w-full py-3 bg-[#4F46E5] text-white rounded-[8px] text-[14px] font-medium hover:bg-[#4338CA] transition-colors flex items-center justify-center gap-2">
+              <div className="p-6 border-t border-[#FEF08A] bg-[#FFFDF0] flex flex-col gap-3">
+                <button className="w-full py-3 bg-[#B45309] text-white rounded-[8px] text-[14px] font-medium hover:bg-[#78350F] transition-colors flex items-center justify-center gap-2">
                   <Check size={18} /> Approve Documentation
                 </button>
-                <button className="w-full py-3 bg-white border border-[#C7D2FE] text-[#4F46E5] rounded-[8px] text-[14px] font-medium hover:bg-[#EEF2FF] transition-colors">
-                  Request Clarification
+                <button className="w-full py-3 bg-white border border-[#FEF08A] text-[#92400E] rounded-[8px] text-[14px] font-medium hover:bg-[#FEFCE8] transition-colors">
+                  Request Revision
                 </button>
               </div>
             </div>

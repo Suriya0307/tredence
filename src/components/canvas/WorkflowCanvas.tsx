@@ -88,38 +88,49 @@ const WorkflowCanvasInner = () => {
   return (
     <div className="flex-1 h-full relative flex flex-col" ref={reactFlowWrapper}>
       {/* Top Toolbar — mimics reference header */}
-      <div className="h-12 border-b border-slate-100 bg-white flex items-center justify-between px-4 z-10 shrink-0">
+      <div className="h-12 border-b border-[#FEF08A] bg-white flex items-center justify-between px-4 z-10 shrink-0">
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1.5 text-slate-400">
-            <button className="p-1.5 rounded-md hover:bg-slate-50 transition-colors"><Undo2 size={15} /></button>
-            <button className="p-1.5 rounded-md hover:bg-slate-50 transition-colors"><Redo2 size={15} /></button>
+          <div className="flex items-center gap-1.5 text-[#92400E]/40">
+            <button className="p-1.5 rounded-md hover:bg-[#FEFCE8] transition-colors"><Undo2 size={15} /></button>
+            <button className="p-1.5 rounded-md hover:bg-[#FEFCE8] transition-colors"><Redo2 size={15} /></button>
           </div>
           <div className="w-px h-5 bg-slate-200" />
           <div className="flex flex-col">
-            <span className="text-sm font-bold text-slate-800 leading-tight">User Automation</span>
-            <span className="text-[10px] text-slate-400 leading-tight">Overview of User Workflows.</span>
+            <span className="text-sm font-bold text-[#1F2937] leading-tight">User Automation</span>
+            <span className="text-[10px] text-[#92400E]/60 leading-tight">Overview of User Workflows.</span>
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <button className="p-2 text-slate-400 hover:text-slate-600 rounded-md hover:bg-slate-50 transition-colors">
+          {/* Edge Gradient Definition */}
+          <svg style={{ position: 'absolute', width: 0, height: 0 }}>
+            <defs>
+              <linearGradient id="edge-gradient" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#FDE68A" />
+                <stop offset="50%" stopColor="#F59E0B" />
+                <stop offset="100%" stopColor="#FDE68A" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <button className="p-2 text-[#92400E]/40 hover:text-[#92400E] rounded-md hover:bg-[#FEFCE8] transition-colors">
             <Search size={15} />
           </button>
-          <button className="p-2 text-slate-400 hover:text-slate-600 rounded-md hover:bg-slate-50 transition-colors">
+          <button className="p-2 text-[#92400E]/40 hover:text-[#92400E] rounded-md hover:bg-[#FEFCE8] transition-colors">
             <Bell size={15} />
           </button>
-          <button className="p-2 text-slate-400 hover:text-slate-600 rounded-md hover:bg-slate-50 transition-colors">
+          <button className="p-2 text-[#92400E]/40 hover:text-[#92400E] rounded-md hover:bg-[#FEFCE8] transition-colors">
             <Settings size={15} />
           </button>
           <div className="w-px h-5 bg-slate-200" />
           <button 
-            className="flex items-center gap-1.5 bg-white border border-slate-200 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-50 transition-colors shadow-sm"
+            className="flex items-center gap-1.5 bg-white border border-[#FEF08A] px-3 py-1.5 rounded-lg text-xs font-semibold text-[#92400E] hover:bg-[#FEFCE8] transition-colors shadow-sm"
             onClick={onExport}
           >
             <Download size={13} />
             Export
           </button>
           <button 
-            className="flex items-center gap-1.5 bg-indigo-600 text-white px-3.5 py-1.5 rounded-lg text-xs font-semibold hover:bg-indigo-700 transition-colors shadow-sm shadow-indigo-200 active:scale-95"
+            className="flex items-center gap-1.5 bg-[#B45309] text-white px-3.5 py-1.5 rounded-lg text-xs font-semibold hover:bg-[#78350F] transition-colors shadow-sm shadow-amber-100/50 active:scale-95"
             id="test-workflow-btn"
           >
             <PlayCircle size={13} />
@@ -141,14 +152,24 @@ const WorkflowCanvasInner = () => {
           onSelectionChange={onSelectionChange}
           nodeTypes={nodeTypes}
           fitView
-          className="bg-slate-50/50"
+          className="bg-[#FFFDF0]"
           defaultEdgeOptions={{
             type: 'smoothstep',
             animated: true,
-            style: { stroke: '#cbd5e1', strokeWidth: 1.5 },
+            style: { 
+              stroke: '#F59E0B', 
+              strokeWidth: 2.5,
+              strokeOpacity: 0.8,
+            },
           }}
         >
-          <Background gap={24} color="#e2e8f0" size={1} />
+          <Background 
+            variant="dots" 
+            gap={24} 
+            size={1} 
+            color="#FEF08A" 
+            style={{ opacity: 0.8 }}
+          />
           <Controls 
             position="bottom-left" 
             showInteractive={false}

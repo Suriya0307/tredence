@@ -44,7 +44,7 @@ function App() {
   const renderTopActions = () => {
     if (currentView === 'Workflows') return null;
     return (
-      <button className="bg-[#4F46E5] text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-[#4338CA] transition-colors">
+      <button className="bg-[#B45309] text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-[#78350F] transition-colors">
         + New {currentView === 'Settings' ? 'Update' : currentView.slice(0, -1)}
       </button>
     );
@@ -53,7 +53,7 @@ function App() {
   const isWorkflows = currentView === 'Workflows';
 
   return (
-    <div className="flex h-screen w-screen overflow-hidden bg-[#EEF2FF] text-[#1F2937] font-sans">
+    <div className="flex h-screen w-screen overflow-hidden bg-[#FFFDF0] text-[#1F2937] font-sans">
       {/* Sidebar Navigation - Midnight Vault */}
       <NodePalette />
 

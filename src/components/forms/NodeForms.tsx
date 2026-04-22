@@ -62,7 +62,7 @@ const Input = forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputEl
     <input
       {...props}
       ref={ref}
-      className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all placeholder:text-gray-400"
+      className="w-full px-3 py-2 text-sm border border-[#FEF08A] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FDE68A]/30 focus:border-[#F59E0B] transition-all placeholder:text-[#9CA3AF] bg-[#FFFDF0]"
     />
   )
 );
@@ -73,7 +73,7 @@ const Select = forwardRef<HTMLSelectElement, React.SelectHTMLAttributes<HTMLSele
     <select
       {...props}
       ref={ref}
-      className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all bg-white"
+      className="w-full px-3 py-2 text-sm border border-[#FEF08A] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FDE68A]/30 focus:border-[#F59E0B] transition-all bg-[#FFFDF0]"
     >
       {children}
     </select>
@@ -173,7 +173,7 @@ export const TaskNodeForm = ({ selectedNode }: { selectedNode: WorkflowNode }) =
       <FieldWrapper label="Description" error={errors.description?.message}>
         <textarea 
           {...register('description')} 
-          className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all min-h-[80px]"
+          className="w-full px-3 py-2 text-sm border border-[#FEF08A] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FDE68A]/30 focus:border-[#F59E0B] transition-all min-h-[80px] bg-[#FFFDF0]"
         />
       </FieldWrapper>
       <div className="grid grid-cols-2 gap-4">
@@ -243,7 +243,7 @@ export const ApprovalNodeForm = ({ selectedNode }: { selectedNode: WorkflowNode 
           <input 
             type="range" 
             {...register('autoApproveThreshold', { valueAsNumber: true })} 
-            className="flex-1 h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-amber-500"
+            className="flex-1 h-1.5 bg-[#FEF08A] rounded-lg appearance-none cursor-pointer accent-[#B45309] hover:shadow-[0_0_8px_rgba(245,158,11,0.4)] transition-shadow"
           />
           <span className="text-sm font-bold text-amber-600 w-8">{watch('autoApproveThreshold')}%</span>
         </div>
@@ -333,7 +333,7 @@ export const EndNodeForm = ({ selectedNode }: { selectedNode: WorkflowNode }) =>
       <FieldWrapper label="Completion Message" error={errors.endMessage?.message}>
         <textarea 
           {...register('endMessage')} 
-          className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all min-h-[80px]"
+          className="w-full px-3 py-2 text-sm border border-[#FEF08A] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FDE68A]/30 focus:border-[#F59E0B] transition-all min-h-[80px] bg-[#FFFDF0]"
         />
       </FieldWrapper>
       <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-100">
@@ -341,7 +341,7 @@ export const EndNodeForm = ({ selectedNode }: { selectedNode: WorkflowNode }) =>
         <input 
           type="checkbox" 
           {...register('showSummary')} 
-          className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
+          className="w-4 h-4 text-[#B45309] rounded focus:ring-[#FDE68A] accent-[#B45309]"
         />
       </div>
     </div>

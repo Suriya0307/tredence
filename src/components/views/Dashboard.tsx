@@ -37,7 +37,7 @@ const Sparkline = ({ data, color }: { data: number[], color: string }) => {
 };
 
 const KPITile = ({ title, value, detail, data, color }: any) => (
-  <div className="bg-white p-5 rounded-[12px] border border-[#E0E7FF] shadow-[0_1px_4px_rgba(99,102,241,0.07)] flex flex-col justify-between">
+  <div className="bg-[#FFFFF5] p-5 rounded-[12px] border border-[#FEF08A] shadow-[0_1px_4px_rgba(253,230,138,0.1)] flex flex-col justify-between">
     <div className="flex items-start justify-between mb-3">
       <span className="text-[12px] text-[#9CA3AF] uppercase tracking-wider font-medium">{title}</span>
       <Sparkline data={data} color={color} />
@@ -47,7 +47,7 @@ const KPITile = ({ title, value, detail, data, color }: any) => (
         <h3 className="text-[28px] font-semibold text-[#111827] leading-none mb-1">{value}</h3>
         <p className="text-[12px] text-[#6B7280]">{detail}</p>
       </div>
-      <div className="p-1 rounded-md text-[#9CA3AF] hover:text-[#6366F1] transition-colors cursor-pointer">
+      <div className="p-1 rounded-md text-[#92400E]/60 hover:text-[#92400E] transition-colors cursor-pointer">
         <ArrowUpRight size={16} />
       </div>
     </div>
@@ -73,7 +73,7 @@ const HorizontalBarChart = () => {
           </div>
           <div className="h-2 w-full bg-[#EEF2FF] rounded-full overflow-hidden">
             <div 
-              className="h-full rounded-full bg-[#6366F1] transition-all duration-1000 ease-out" 
+              className="h-full rounded-full bg-[#B45309] transition-all duration-1000 ease-out" 
               style={{ width: `${(item.value / max) * 100}%` }} 
             />
           </div>
@@ -90,7 +90,7 @@ export const Dashboard = () => {
     { title: 'Final Review: James Wilson', type: 'critical', time: '10:30 AM', icon: <AlertCircle size={14} className="text-[#F43F5E]" /> },
     { title: 'Onboarding Check-in', type: 'pending', time: '11:00 AM', icon: <Clock size={14} className="text-[#F59E0B]" /> },
     { title: 'Slack Integration Reauth', type: 'warning', time: '1:00 PM', icon: <AlertCircle size={14} className="text-[#F59E0B]" /> },
-    { title: 'Compliance Renewal', type: 'pending', time: '3:30 PM', icon: <Calendar size={14} className="text-[#6366F1]" /> },
+    { title: 'Compliance Renewal', type: 'pending', time: '3:30 PM', icon: <Calendar size={14} className="text-[#92400E]" /> },
   ];
 
   const recentHires = [
@@ -122,13 +122,13 @@ export const Dashboard = () => {
       {/* Search Bar / Command Input */}
       <div className="max-w-6xl mx-auto">
         <div className="relative group">
-          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#9CA3AF] group-focus-within:text-[#6366F1] transition-colors">
+          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#92400E]/40 group-focus-within:text-[#92400E] transition-colors">
             <Search size={18} />
           </div>
           <input 
             type="text" 
             placeholder="Search employees, actions, or modules... (⌘K)"
-            className="w-full pl-12 pr-16 py-3.5 bg-white border border-[#D1D5DB] rounded-[8px] text-[14px] text-[#1F2937] focus:ring-2 focus:ring-[#6366F1] focus:border-transparent outline-none transition-all placeholder-[#9CA3AF]"
+            className="w-full pl-12 pr-16 py-3.5 bg-[#FFFDE7] border border-[#FEF08A] rounded-[8px] text-[14px] text-[#1F2937] focus:ring-2 focus:ring-[#FDE68A] focus:border-transparent outline-none transition-all placeholder-[#9CA3AF]"
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
           />
@@ -145,7 +145,7 @@ export const Dashboard = () => {
           value="142" 
           detail="+12 this month" 
           data={[120, 125, 122, 130, 135, 140, 142]} 
-          color="#6366F1" 
+          color="#B45309" 
         />
         <KPITile 
           title="Open Roles" 
@@ -173,10 +173,10 @@ export const Dashboard = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 pb-10">
         {/* Pulse / Timeline */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="bg-white rounded-[12px] border border-[#E0E7FF] shadow-[0_1px_4px_rgba(99,102,241,0.07)] overflow-hidden flex flex-col h-full">
+          <div className="bg-white rounded-[12px] border border-[#FDE68A] shadow-[0_1px_4px_rgba(253,230,138,0.1)] overflow-hidden flex flex-col h-full border-l-[4px]">
             <div className="p-5 border-b border-[#E0E7FF] flex items-center justify-between">
               <h3 className="text-[13px] font-medium text-[#374151] tracking-[0.01em] flex items-center gap-2">
-                Today's Pulse <div className="w-1.5 h-1.5 rounded-full bg-[#6366F1] animate-pulse" />
+                Today's Pulse <div className="w-1.5 h-1.5 rounded-full bg-[#B45309] animate-pulse" />
               </h3>
               <span className="text-[11px] text-[#9CA3AF]">4 tasks pending</span>
             </div>
@@ -190,12 +190,12 @@ export const Dashboard = () => {
                     <h4 className="text-[13px] font-medium text-[#1F2937] truncate">{item.title}</h4>
                     <p className="text-[11px] text-[#6B7280] font-medium uppercase tracking-[0.02em]">{item.time}</p>
                   </div>
-                  <ChevronRight size={14} className="text-[#9CA3AF] group-hover:text-[#6366F1] transition-all" />
+                  <ChevronRight size={14} className="text-[#92400E]/40 group-hover:text-[#92400E] transition-all" />
                 </div>
               ))}
             </div>
             <div className="p-5 border-t border-[#E0E7FF]">
-              <button className="w-full py-2 bg-white border border-[#C7D2FE] text-[#4F46E5] rounded-[8px] text-[12px] font-medium hover:bg-[#EEF2FF] transition-colors">
+              <button className="w-full py-2 bg-white border border-[#FEF08A] text-[#92400E] rounded-[8px] text-[12px] font-medium hover:bg-[#FEFCE8] transition-colors">
                 Run Simulation Report
               </button>
             </div>
@@ -205,7 +205,7 @@ export const Dashboard = () => {
         {/* Charts & Tables */}
         <div className="lg:col-span-2 space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded-[12px] border border-[#E0E7FF] shadow-[0_1px_4px_rgba(99,102,241,0.07)]">
+            <div className="bg-white p-6 rounded-[12px] border border-[#FDE68A] shadow-[0_1px_4px_rgba(253,230,138,0.1)] border-l-[4px]">
               <div className="flex items-center justify-between mb-8">
                 <div>
                   <h3 className="text-[13px] font-medium text-[#374151] tracking-[0.01em]">Headcount by Dept</h3>
@@ -215,7 +215,7 @@ export const Dashboard = () => {
               </div>
               <HorizontalBarChart />
             </div>
-            <div className="bg-white p-6 rounded-[12px] border border-[#E0E7FF] shadow-[0_1px_4px_rgba(99,102,241,0.07)] flex flex-col">
+            <div className="bg-white p-6 rounded-[12px] border border-[#FDE68A] shadow-[0_1px_4px_rgba(253,230,138,0.1)] flex flex-col border-l-[4px]">
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h3 className="text-[13px] font-medium text-[#374151] tracking-[0.01em]">Active Workflows</h3>
@@ -225,31 +225,31 @@ export const Dashboard = () => {
               </div>
               <div className="flex-1 flex flex-col justify-center items-center gap-4 text-center">
                  <div className="p-4 bg-[#EEF2FF] rounded-[12px] border border-dashed border-[#C7D2FE]">
-                    <Users size={28} className="text-[#6366F1]" />
+                    <Users size={28} className="text-[#B45309]" />
                  </div>
                  <div>
                     <h4 className="text-[15px] font-medium text-[#1F2937]">14 Active Runs</h4>
                     <p className="text-[12px] text-[#6B7280] mt-1 max-w-[150px] leading-relaxed">Manage all onboarding and recruitment triggers.</p>
                  </div>
-                 <button className="text-[12px] font-medium text-[#4F46E5] hover:text-[#4338CA] flex items-center gap-1 transition-colors mt-2">
+                 <button className="text-[12px] font-medium text-[#92400E] hover:text-[#78350F] flex items-center gap-1 transition-colors mt-2">
                     Open Automations <ArrowUpRight size={14}/>
                  </button>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-[12px] border border-[#E0E7FF] shadow-[0_1px_4px_rgba(99,102,241,0.07)] overflow-hidden">
-            <div className="p-5 border-b border-[#E0E7FF] flex justify-between items-center">
+          <div className="bg-white rounded-[12px] border border-[#FDE68A] shadow-[0_1px_4px_rgba(253,230,138,0.1)] overflow-hidden border-l-[4px]">
+            <div className="p-5 border-b border-[#FEF08A] flex justify-between items-center">
               <div>
                 <h3 className="text-[13px] font-medium text-[#374151] tracking-[0.01em]">Recently Hired</h3>
                 <p className="text-[11px] text-[#9CA3AF] mt-0.5">Current onboarding queue</p>
               </div>
-              <button className="text-[#4F46E5] font-medium text-[12px] hover:text-[#4338CA] transition-colors">Full Directory</button>
+              <button className="text-[#92400E] font-medium text-[12px] hover:text-[#78350F] transition-colors">Full Directory</button>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="bg-[#F5F3FF] text-[11px] font-semibold text-[#6B7280] uppercase tracking-wider">
+                  <tr className="bg-[#FFFDF0] text-[11px] font-semibold text-[#92400E] uppercase tracking-wider">
                     <th className="px-6 py-3">Employee</th>
                     <th className="px-6 py-3">Department</th>
                     <th className="px-6 py-3">Date</th>
@@ -258,10 +258,10 @@ export const Dashboard = () => {
                 </thead>
                 <tbody>
                   {recentHires.map((hire, idx) => (
-                    <tr key={hire.name} className={clsx("group border-t border-[#E8E4FF] transition-colors", idx % 2 === 0 ? "bg-white" : "bg-[#FAFAFE]", "hover:bg-[#F0EEFF]")}>
+                    <tr key={hire.name} className={clsx("group border-t border-[#FEF3C7] transition-colors", idx % 2 === 0 ? "bg-white" : "bg-[#FFFDF0]", "hover:bg-[#FEF9C3]")}>
                       <td className="px-6 py-3">
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-[#E0E7FF] flex items-center justify-center text-[11px] font-bold text-[#4F46E5]">
+                          <div className="w-8 h-8 rounded-full bg-[#FEFCE8] flex items-center justify-center text-[11px] font-bold text-[#92400E]">
                             {hire.name.charAt(0)}
                           </div>
                           <div>

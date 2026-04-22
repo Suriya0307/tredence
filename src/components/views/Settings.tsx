@@ -48,7 +48,7 @@ export const Settings = () => {
         <div className="w-full lg:w-64 shrink-0 space-y-1.5">
           <div className="mb-6 px-4">
              <h2 className="text-[14px] font-semibold text-[#1F2937]">Configuration</h2>
-             <p className="text-[11px] text-[#9CA3AF] mt-1">Manage your workspace</p>
+             <p className="text-[11px] text-[#92400E] opacity-70 mt-1">Manage your workspace</p>
           </div>
           {TABS.map(tab => (
             <button 
@@ -57,11 +57,11 @@ export const Settings = () => {
               className={clsx(
                 "w-full flex items-center gap-3 px-5 py-3 rounded-xl text-[13px] font-medium transition-all group",
                 activeTab === tab.id 
-                  ? "bg-white text-[#4F46E5] border border-[#C7D2FE] shadow-sm" 
-                  : "text-[#6B7280] hover:text-[#374151] hover:bg-white"
+                  ? "bg-[#FEFCE8] text-[#92400E] border border-[#FEF08A] shadow-sm" 
+                  : "text-[#1C1917]/60 hover:text-[#1C1917] hover:bg-[#FDE68A]/20"
               )}
             >
-              <span className={clsx("transition-colors", activeTab === tab.id ? "text-[#6366F1]" : "text-[#4B4B6B] opacity-50")}>
+              <span className={clsx("transition-colors", activeTab === tab.id ? "text-[#92400E]" : "text-[#1C1917]/40")}>
                 {tab.icon}
               </span>
               {tab.id}
@@ -72,21 +72,21 @@ export const Settings = () => {
 
         {/* Content Area */}
         <div className="flex-1 animate-in fade-in duration-500 pb-20">
-           {activeTab === 'Profile' && (
+            {activeTab === 'Profile' && (
              <div className="space-y-8">
-                <div className="bg-white p-10 rounded-2xl border border-[#E0E7FF] shadow-[0_1px_4px_rgba(99,102,241,0.07)] relative">
+                <div className="bg-white p-10 rounded-2xl border border-[#FDE68A] shadow-[0_1px_4px_rgba(253,230,138,0.1)] relative border-l-[4px]">
                    <div className="flex flex-col md:flex-row items-center gap-10 mb-12">
                       <div className="relative group">
-                         <div className="w-32 h-32 rounded-3xl bg-[#EEF2FF] border-2 border-[#C7D2FE] flex items-center justify-center text-4xl font-black text-[#6366F1] shadow-xl shadow-indigo-100/50">
+                         <div className="w-32 h-32 rounded-3xl bg-[#FEFCE8] border-2 border-[#FEF08A] flex items-center justify-center text-4xl font-black text-[#92400E] shadow-xl shadow-amber-100/50">
                             SC
                          </div>
-                         <button className="absolute -bottom-2 -right-2 p-3 bg-white border border-[#D1D5DB] rounded-2xl shadow-lg text-[#6B7280] hover:text-[#6366F1] transition-all hover:scale-110 active:scale-95 group-hover:shadow-indigo-100">
+                         <button className="absolute -bottom-2 -right-2 p-3 bg-white border border-[#FEF08A] rounded-2xl shadow-lg text-[#92400E]/60 hover:text-[#92400E] transition-all hover:scale-110 active:scale-95 group-hover:shadow-amber-100">
                             <Camera size={20}/>
                          </button>
                       </div>
                       <div className="text-center md:text-left">
                          <h3 className="text-2xl font-semibold text-[#111827] tracking-tight">Sarah Chen</h3>
-                         <p className="text-[#6366F1] font-bold text-[11px] uppercase tracking-widest mt-1">HR Director / Global Administrator</p>
+                         <p className="text-[#92400E] font-bold text-[11px] uppercase tracking-widest mt-1">HR Director / Global Administrator</p>
                          <div className="flex flex-wrap justify-center md:justify-start gap-5 mt-4 text-[#6B7280]">
                             <div className="flex items-center gap-1.5 text-[11px] font-medium"><Globe size={14} className="opacity-50"/> San Francisco, CA</div>
                             <div className="flex items-center gap-1.5 text-[11px] font-medium"><Smartphone size={14} className="opacity-50"/> +1 (555) 012-3456</div>
@@ -101,18 +101,18 @@ export const Settings = () => {
                         { label: 'Department', val: 'Human Resources', icon: <Users size={16}/> },
                         { label: 'Employee ID', val: 'CA-HR-001', icon: <Shield size={16}/> },
                       ].map(f => (
-                        <div key={f.label} className="space-y-2">
-                           <label className="text-[10px] font-bold text-[#9CA3AF] uppercase tracking-widest ml-1">{f.label}</label>
-                           <div className="relative">
-                              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#D1D5DB]">{f.icon}</div>
-                              <input type="text" defaultValue={f.val} className="w-full pl-12 pr-4 py-3.5 bg-[#FAFAFE] border border-[#D1D5DB] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:border-transparent font-medium text-[#1F2937] transition-all placeholder-[#9CA3AF]" />
-                           </div>
+                         <div key={f.label} className="space-y-2">
+                            <label className="text-[10px] font-bold text-[#92400E] uppercase tracking-widest ml-1">{f.label}</label>
+                            <div className="relative">
+                               <div className="absolute left-4 top-1/2 -translate-y-1/2 text-[#92400E]/40">{f.icon}</div>
+                               <input type="text" defaultValue={f.val} className="w-full pl-12 pr-4 py-3.5 bg-[#FFFDF0] border border-[#FEF08A] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#FDE68A] focus:border-transparent font-medium text-[#1F2937] transition-all placeholder-[#9CA3AF]" />
+                            </div>
                         </div>
                       ))}
                    </div>
 
                    <div className="mt-12 flex justify-end">
-                      <button className="px-10 py-3.5 bg-[#4F46E5] text-white rounded-xl font-bold text-sm shadow-lg shadow-indigo-100 hover:bg-[#4338CA] transition-all">
+                      <button className="px-10 py-3.5 bg-[#B45309] text-white rounded-xl font-bold text-sm shadow-lg shadow-amber-100 hover:bg-[#78350F] transition-all">
                          Update Profile
                       </button>
                    </div>
@@ -122,9 +122,9 @@ export const Settings = () => {
 
            {activeTab === 'Notifications' && (
              <div className="space-y-4">
-                <div className="bg-white p-8 rounded-2xl border border-[#E0E7FF] shadow-[0_1px_4px_rgba(99,102,241,0.07)] mb-4">
+                <div className="bg-white p-8 rounded-2xl border border-[#FDE68A] shadow-[0_1px_4px_rgba(253,230,138,0.1)] mb-4 border-l-[4px]">
                    <h3 className="text-base font-semibold text-[#1F2937]">System Notifications</h3>
-                   <p className="text-[11px] text-[#9CA3AF] mt-1">Manage global alert preferences</p>
+                   <p className="text-[11px] text-[#92400E] opacity-70 mt-1">Manage global alert preferences</p>
                 </div>
                 <div className="space-y-3">
                    {[
@@ -134,7 +134,7 @@ export const Settings = () => {
                       { id: 'integrationError', label: 'Integration Sync Errors', desc: 'Notify me immediately if an API connection fails.' },
                       { id: 'weeklyReport', label: 'Weekly HR Summary', desc: 'Receive a consolidated summary report every Monday.' }
                    ].map(item => (
-                      <div key={item.id} className="flex items-center justify-between p-6 bg-white border border-[#E0E7FF] rounded-2xl hover:bg-[#EEF2FF]/30 transition-all group">
+                      <div key={item.id} className="flex items-center justify-between p-6 bg-white border border-[#FDE68A] rounded-2xl hover:bg-[#FEF9C3] transition-all group border-l-[4px]">
                          <div className="flex-1 min-w-0 mr-6">
                             <h4 className="font-bold text-[#1F2937] text-sm tracking-tight">{item.label}</h4>
                             <p className="text-[11px] text-[#6B7280] mt-1">{item.desc}</p>
@@ -146,7 +146,7 @@ export const Settings = () => {
                               checked={notifications[item.id as keyof typeof notifications]}
                               onChange={() => setNotifications({...notifications, [item.id]: !notifications[item.id as keyof typeof notifications]})}
                             />
-                            <div className="w-11 h-6 bg-[#D1D5DB] rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#6366F1]"></div>
+                            <div className="w-11 h-6 bg-[#D1D5DB] rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#B45309]"></div>
                          </label>
                       </div>
                    ))}
@@ -156,31 +156,31 @@ export const Settings = () => {
 
            {activeTab === 'Team & Permissions' && (
              <div className="space-y-8">
-                <div className="bg-white p-8 rounded-2xl border border-[#E0E7FF] shadow-[0_1px_4px_rgba(99,102,241,0.07)] flex items-center justify-between">
+                <div className="bg-white p-8 rounded-2xl border border-[#FDE68A] shadow-[0_1px_4px_rgba(253,230,138,0.1)] flex items-center justify-between border-l-[4px]">
                    <div>
                       <h3 className="text-base font-semibold text-[#1F2937]">Workspace Seats</h3>
-                      <p className="text-[11px] text-[#9CA3AF] mt-1 uppercase font-bold tracking-widest">3 / 10 Active</p>
+                      <p className="text-[11px] text-[#92400E] mt-1 uppercase font-bold tracking-widest">3 / 10 Active</p>
                    </div>
                    <button className="px-5 py-2.5 bg-[#1F2937] text-white rounded-lg text-[12px] font-bold hover:bg-black transition-all">
                      Invite Member
                    </button>
                 </div>
                 
-                <div className="bg-white border border-[#E0E7FF] rounded-2xl overflow-hidden shadow-[0_1px_4px_rgba(99,102,241,0.07)]">
+                <div className="bg-white border border-[#FDE68A] rounded-2xl overflow-hidden shadow-[0_1px_4px_rgba(253,230,138,0.1)] border-l-[4px]">
                    <table className="w-full text-left">
                       <thead>
-                         <tr className="bg-[#F5F3FF] border-b border-[#E8E4FF]">
-                            <th className="px-8 py-4 text-[11px] font-bold text-[#6B7280] uppercase tracking-wider">Member</th>
-                            <th className="px-8 py-4 text-[11px] font-bold text-[#6B7280] uppercase tracking-wider">Role</th>
+                         <tr className="bg-[#FFFDF0] border-b border-[#FEF08A]">
+                            <th className="px-8 py-4 text-[11px] font-bold text-[#92400E] uppercase tracking-wider">Member</th>
+                            <th className="px-8 py-4 text-[11px] font-bold text-[#92400E] uppercase tracking-wider">Role</th>
                             <th className="px-8 py-4 text-right"></th>
                          </tr>
                       </thead>
-                      <tbody className="divide-y divide-[#E8E4FF]">
+                      <tbody className="divide-y divide-[#FEF08A]">
                          {team.map(member => (
-                           <tr key={member.email} className="hover:bg-[#F0EEFF] transition-colors">
+                           <tr key={member.email} className="hover:bg-[#FEF9C3] transition-colors">
                               <td className="px-8 py-4">
                                  <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-xl bg-[#EEF2FF] flex items-center justify-center text-[11px] font-bold text-[#6366F1] border border-[#C7D2FE]">
+                                    <div className="w-10 h-10 rounded-xl bg-[#FEFCE8] flex items-center justify-center text-[11px] font-bold text-[#92400E] border border-[#FEF08A]">
                                        {member.avatar}
                                     </div>
                                     <div className="flex flex-col">
@@ -190,7 +190,7 @@ export const Settings = () => {
                                  </div>
                               </td>
                               <td className="px-8 py-4">
-                                 <span className="px-2.5 py-1 bg-[#EEF2FF] text-[#4F46E5] rounded-lg text-[11px] font-bold border border-[#E0E7FF]">
+                                 <span className="px-2.5 py-1 bg-[#FEFCE8] text-[#92400E] rounded-lg text-[11px] font-bold border border-[#FEF08A]">
                                     {member.role}
                                  </span>
                               </td>

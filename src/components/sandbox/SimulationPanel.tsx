@@ -71,35 +71,35 @@ export const SimulationPanel = ({ isOpen, onClose }: SimulationPanelProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-y-0 right-0 w-[450px] bg-white shadow-2xl z-50 flex flex-col border-l border-gray-200">
-      <div className="p-6 border-b border-gray-100 flex items-center justify-between bg-gray-50/50">
+    <div className="fixed inset-y-0 right-0 w-[450px] bg-white shadow-2xl z-50 flex flex-col border-l border-[#FEF08A]">
+      <div className="p-6 border-b border-[#FEF08A] flex items-center justify-between bg-[#FFFDF0]">
         <div className="flex items-center gap-3">
-          <div className="p-2 bg-blue-100 text-blue-600 rounded-lg">
+          <div className="p-2 bg-[#FEFCE8] text-[#92400E] rounded-lg border border-[#FEF08A]">
             <PlayCircle size={20} />
           </div>
           <div>
-            <h2 className="text-lg font-bold text-gray-800">Workflow Simulator</h2>
-            <p className="text-xs text-gray-400 uppercase tracking-widest font-semibold">Validation & Execution</p>
+            <h2 className="text-lg font-bold text-[#1F2937]">Workflow Simulator</h2>
+            <p className="text-xs text-[#92400E] uppercase tracking-widest font-bold opacity-60">Validation & Execution</p>
           </div>
         </div>
-        <button onClick={onClose} className="p-2 hover:bg-gray-200 rounded-full transition-colors text-gray-400">
+        <button onClick={onClose} className="p-2 hover:bg-[#FEFCE8] rounded-full transition-colors text-[#92400E]/40">
           <X size={20} />
         </button>
       </div>
 
       <div className="flex-1 overflow-y-auto p-6 space-y-6">
         {!result && !loading && validationErrors.length === 0 && (
-          <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 text-center">
-            <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="bg-[#FFFDF0] rounded-xl p-6 border border-[#FEF08A] text-center">
+            <div className="w-16 h-16 bg-[#FEFCE8] text-[#92400E] rounded-full flex items-center justify-center mx-auto mb-4 border border-[#FEF08A]">
               <Play size={24} fill="currentColor" />
             </div>
-            <h3 className="font-bold text-blue-900 mb-2">Ready to Test?</h3>
-            <p className="text-sm text-blue-700/70 mb-6">
+            <h3 className="font-bold text-[#1F2937] mb-2">Ready to Test?</h3>
+            <p className="text-sm text-[#92400E]/70 mb-6">
               This will validate your graph structure and simulate a step-by-step execution to ensure logic is sound.
             </p>
             <button 
               onClick={runSimulation}
-              className="w-full bg-blue-600 text-white py-3 rounded-lg font-bold shadow-lg shadow-blue-200 hover:bg-blue-700 active:scale-95 transition-all"
+              className="w-full bg-[#B45309] text-white py-3 rounded-lg font-bold shadow-lg shadow-amber-100 hover:bg-[#78350F] active:scale-95 transition-all"
             >
               Start Simulation
             </button>
@@ -138,13 +138,13 @@ export const SimulationPanel = ({ isOpen, onClose }: SimulationPanelProps) => {
           <div className="space-y-6">
             <div className="flex items-center justify-center p-12">
               <div className="relative w-16 h-16">
-                <div className="absolute inset-0 border-4 border-blue-100 rounded-full"></div>
-                <div className="absolute inset-0 border-4 border-blue-600 rounded-full border-t-transparent animate-spin"></div>
+                <div className="absolute inset-0 border-4 border-[#FEF08A] rounded-full"></div>
+                <div className="absolute inset-0 border-4 border-[#B45309] rounded-full border-t-transparent animate-spin"></div>
               </div>
             </div>
             <div className="text-center">
-              <p className="text-sm font-medium text-gray-900">Executing Workflow...</p>
-              <p className="text-xs text-gray-500 mt-1">Calling simulation API</p>
+              <p className="text-sm font-bold text-[#1F2937]">Executing Workflow...</p>
+              <p className="text-xs text-[#92400E]/60 mt-1">Calling simulation API</p>
             </div>
           </div>
         )}
@@ -181,15 +181,15 @@ export const SimulationPanel = ({ isOpen, onClose }: SimulationPanelProps) => {
                       {step.status === 'completed' && <Check size={10} className="text-white" />}
                     </div>
                     
-                    <div className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm hover:border-blue-200 transition-all group">
+                    <div className="bg-white border border-[#FEF08A] rounded-xl p-4 shadow-sm hover:border-[#B45309] transition-all group">
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
                           <span className={clsx(
                             "p-1.5 rounded-md text-white shadow-sm",
-                            step.nodeType === 'StartNode' ? 'bg-green-500' :
-                            step.nodeType === 'TaskNode' ? 'bg-blue-500' :
-                            step.nodeType === 'ApprovalNode' ? 'bg-amber-500' :
-                            step.nodeType === 'AutomatedStepNode' ? 'bg-purple-500' : 'bg-red-500'
+                            step.nodeType === 'StartNode' ? 'bg-emerald-500' :
+                            step.nodeType === 'TaskNode' ? 'bg-[#92400E]' :
+                            step.nodeType === 'ApprovalNode' ? 'bg-[#F59E0B]' :
+                            step.nodeType === 'AutomatedStepNode' ? 'bg-[#B45309]' : 'bg-rose-500'
                           )}>
                             {step.nodeType === 'StartNode' && <PlayCircle size={14} />}
                             {step.nodeType === 'TaskNode' && <ClipboardList size={14} />}
@@ -197,7 +197,7 @@ export const SimulationPanel = ({ isOpen, onClose }: SimulationPanelProps) => {
                             {step.nodeType === 'AutomatedStepNode' && <Zap size={14} />}
                             {step.nodeType === 'EndNode' && <Flag size={14} />}
                           </span>
-                          <span className="text-xs font-bold text-gray-900 group-hover:text-blue-600 transition-colors truncate">
+                          <span className="text-xs font-bold text-[#1F2937] group-hover:text-[#B45309] transition-colors truncate">
                             {step.title}
                           </span>
                         </div>
@@ -225,7 +225,7 @@ export const SimulationPanel = ({ isOpen, onClose }: SimulationPanelProps) => {
 
             <button 
               onClick={() => setResult(null)}
-              className="w-full border border-gray-200 text-gray-600 py-3 rounded-lg text-sm font-bold hover:bg-gray-50 transition-colors"
+              className="w-full border border-[#FEF08A] text-[#92400E] py-3 rounded-lg text-sm font-bold hover:bg-[#FFFDF0] transition-colors"
             >
               Reset Simulation
             </button>
