@@ -363,7 +363,7 @@ UI Renders Module
 ## Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/hr-workflow.git
+git clone https://github.com/Suriya0307/tredence
 cd hr-workflow
 ```
 
